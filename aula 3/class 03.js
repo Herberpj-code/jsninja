@@ -13,7 +13,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-> var person = {
+var person = {
      nome: 'Herber',
      sobrenome: 'Pucinelli',
      sexo: 'Masculino',
@@ -30,7 +30,7 @@ for chamado.
 */
 person.fazerAniversario = function() {
     person.idade++;
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -42,11 +42,11 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-person.andar = function(x) {
-    if (x > 0) {
-    person.caminhouQuantosMetros += x;
+person.andar = function(metros) {
+    if (metros > 0) {
+    person.caminhouQuantosMetros += metros;
     person.andando = true;}
-}
+};
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
@@ -54,7 +54,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 person.parar = function() {
     person.andando = false;
-}
+};
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
@@ -62,7 +62,7 @@ Crie um método chamado `nomeCompleto`, que retorne a frase:
 */
 person.nomeCompleto = function() {
     return 'Olá! meu nome é ' + person.nome + ' ' + person.sobrenome;
-}
+};
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
@@ -70,7 +70,7 @@ Crie um método chamado `mostrarIdade`, que retorne a frase:
 */
 person.mostrarIdade = function() {
     return 'Olá, eu tenho ' + person.idade + ' ' + 'anos!'
-}
+};
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
@@ -78,7 +78,7 @@ Crie um método chamado `mostrarPeso`, que retorne a frase:
 */
 person.mostrarPeso = function() {
     return 'Eu peso ' + person.peso + ' ' + 'Kg'
-}
+};
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -86,7 +86,7 @@ Crie um método chamado `mostrarAltura` que retorne a frase:
 */
 person.mostrarAltura = function() {
     return 'Minha altura é ' + person.altura + 'm'
-}
+};
 
 /*
 Agora vamos brincar um pouco com o objeto criado:
@@ -139,24 +139,24 @@ person.andar(5);
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-person.andando // andando = true
+person.andando; // andando = true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-person.parar
+person.parar;
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
-person.andando // andando = false
+person.andando. // andando = false
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-person.caminhouQuantosMetros // 15
+person.caminhouQuantosMetros(); // 15
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -175,7 +175,25 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+person.apresentacao = function() {
+    var sexo = 'o';
+    var idadeAnos = 'anos';
+    var metrosCaminhados = 'metros';
+
+    if (person.sexo === "Feminino"){
+        sexo ='a';
+    }
+    if (person.idadeAnos === 1){
+        idadeAnos = 'ano';
+    }
+    if (person.metrosCaminhados === 1) {
+        metrosCaminhados = 'metro';
+    }
+
+    return 'Olá, eu sou ' + sexo + ' ' + person.nome + ', ' + 'tenho ' + person.idade + ' ' + idadeAnos + ', ' + person.altura + ' ' + 'de altura, meu peso é ' + person.peso +'kgs e, só hoje, eu já caminhei ' + person.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';  
+}
+
 
 // Agora, apresente-se ;)
-?
+person.apresentacao(); // 'Olá, eu sou o Herber, tenho 29 anos, 1.75 de altura, meu peso é 85kgs e, só hoje, eu já caminhei 50 metros!'

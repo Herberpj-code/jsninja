@@ -85,7 +85,7 @@ function book(livro) {
 		'livro3': {
 			quantidadePaginas: 70,
 			autor: 'Fernando',
-			editora: 'casa do codigo2'}
+			editora: 'casa do codigo'}
     }
 
     return !livro ? allBooks : allBooks [ livro ];
